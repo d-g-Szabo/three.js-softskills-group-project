@@ -16,7 +16,8 @@ Once the package is installed to start using it you will need to perform a littl
 
 When you understand these concepts, you are ready to create your first scene. You will need to create a Canvas. This can be imported, import { Canvas } from '@react-three/fiber', at the top of your page.js. The Canvas component does much of the set up for us, so we do not need to manually set up a Scene and Camera. It also renders our scene every frame so we do not need a render loop. A basic example follows:
 
-````import { Canvas } from '@react-three/fiber'
+```
+import { Canvas } from '@react-three/fiber'
 
 export default function App() {
   return (
@@ -24,12 +25,14 @@ export default function App() {
       <Canvas />
     </div>
   )
-} ```
-You will then need to add light to your scene or nothing will be visible even it it is within the camera’s FOV.  You can add ambient light to the whole scene or you can add directional light from a source. As we import Three.js components we can pass information into them via props we don’t need to construct the objects with the property ourselves. For instance
-``` <ambientLight intensity={0.1} /> ```
+}
+```
+
+You will then need to add light to your scene or nothing will be visible even it it is within the camera’s FOV. You can add ambient light to the whole scene or you can add directional light from a source. As we import Three.js components we can pass information into them via props we don’t need to construct the objects with the property ourselves. For instance
+`<ambientLight intensity={0.1} />`
 Is the same as using
 
-``` const light = new THREE.AmbientLight()
+````const light = new THREE.AmbientLight()
 light.intensity = 0.1 ```
 Once you have the canvas and lighting set up you can try adding an object into your scene. You can either directly create a mesh object inside the canvas, you can create a mesh object and pass properties into it as props or you can create a React component that you can re-use and import it into your canvas. If you wantr to create a rectangular cuboid you can use BoxGeometry.  You can oneagain manually create the BoxGeometry object, but as we are using react you can simple put ``` <boxGeometry args={[2, 2, 2]} /> ``` inside your mesh object.  Here’s the component I made: ``` export default function Box(props) {
   return (
