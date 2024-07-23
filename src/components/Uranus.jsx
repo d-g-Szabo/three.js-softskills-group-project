@@ -16,7 +16,7 @@ export default function Uranus(props) {
     <mesh ref={uranusRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[2, 30, 10]} />
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
-      <meshPhysicalMaterial color={"blue"} />
+      <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );

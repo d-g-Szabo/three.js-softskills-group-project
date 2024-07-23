@@ -15,7 +15,7 @@ export default function Venus(props) {
   return (
     <mesh ref={venusRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[0.949, 30, 10]} />
-      <meshPhysicalMaterial color={"blue"} />
+      <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );

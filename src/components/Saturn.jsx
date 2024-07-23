@@ -16,7 +16,7 @@ export default function Saturn(props) {
     <mesh ref={saturnRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[4, 30, 10]} />
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
-      <meshPhysicalMaterial color={"blue"} />
+      <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );
