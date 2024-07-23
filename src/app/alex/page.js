@@ -37,17 +37,17 @@ export default function Home() {
           position: [-6, 7, 7],
         }}
       >
-        <Suspense fallback={null}>
-          <Mercury map={mercuryTexture} />
-          <Venus map={venusTexture} />
-          <Moon map={moonTexture} />
-          <Mars map={marsTexture} />
-          <Jupiter map={jupiterTexture} />
-          <Saturn map={saturnTexture} />
-          <Uranus map={uranusTexture} />
-          <Neptune map={neptuneTexture} />
-          <Sphere map={sunTexture} />
-        </Suspense>
+        {/* <Suspense fallback={null}> */}
+        <Mercury map={mercuryTexture} />
+        <Venus map={venusTexture} />
+        <Moon map={moonTexture} />
+        <Mars map={marsTexture} />
+        <Jupiter map={jupiterTexture} />
+        <Saturn map={saturnTexture} />
+        <Uranus map={uranusTexture} />
+        <Neptune map={neptuneTexture} />
+        <Sphere map={sunTexture} />
+        {/* </Suspense> */}
         <Draggable></Draggable>
         <ambientLight color={"white"} intensity={0.3} />
         <OrbitControls />
