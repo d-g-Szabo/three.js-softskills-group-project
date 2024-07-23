@@ -1,6 +1,16 @@
 # Three.js project documentation
 
-In this project we have used Three.js with Next.js. This means that we did not use the normal Three.js package we instead used the React Three Fiber package. This package does not limit any function from Three.js and infect can outperform Three.js when scaled up to do Reacts scheduling abilities. First you will need to install the Three.js package. For Vanilla Three.js you will need to instal Three from NPM, `npm install three`. As previously stated we are using Next.js and so need the React version. `npm install three @react-three/fiber`
+In this project we have used Three.js with Next.js. This means that we did not use the normal Three.js package we instead used the React Three Fiber package. This package does not limit any function from Three.js and infect can outperform Three.js when scaled up to do Reacts scheduling abilities. First you will need to install the Three.js package. For Vanilla Three.js you will need to instal Three from NPM.
+
+```
+npm install three
+```
+
+As previously stated we are using Next.js and so need the React version.
+
+```
+npm install three @react-three/fiber
+```
 
 Once the package is installed to start using it you will need to perform a little set up. The first thing you should do is read the Three.js documentation to get a basic understanding of a scene, a camera, a mesh, geometry, and material.
 
