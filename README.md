@@ -1,6 +1,6 @@
 # Three.js project documentation
 
-In this project we have used Three.js with Next.js. This means that we did not use the normal Three.js package we instead used the React Three Fiber package. This package does not limit any function from Three.js and infect can outperform Three.js when scaled up to do Reacts scheduling abilities. First you will need to install the Three.js package. For Vanilla Three.js you will need to instal Three from NPM, “npm install three”. As previously stated we are using Next.js and so need the React version, “npm install three @react-three/fiber”.
+In this project we have used Three.js with Next.js. This means that we did not use the normal Three.js package we instead used the React Three Fiber package. This package does not limit any function from Three.js and infect can outperform Three.js when scaled up to do Reacts scheduling abilities. First you will need to install the Three.js package. For Vanilla Three.js you will need to instal Three from NPM, `npm install three`. As previously stated we are using Next.js and so need the React version. `npm install three @react-three/fiber`
 
 Once the package is installed to start using it you will need to perform a little set up. The first thing you should do is read the Three.js documentation to get a basic understanding of a scene, a camera, a mesh, geometry, and material.
 
@@ -30,7 +30,7 @@ export default function App() {
 
 You will then need to add light to your scene or nothing will be visible even it it is within the camera’s FOV. You can add ambient light to the whole scene or you can add directional light from a source. As we import Three.js components we can pass information into them via props we don’t need to construct the objects with the property ourselves. For instance
 `<ambientLight intensity={0.1} />`
-Is the same as using
+Is the same as using:
 
 ```
 const light = new THREE.AmbientLight()
