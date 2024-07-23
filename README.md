@@ -40,14 +40,14 @@ light.intensity = 0.1
 Once you have the canvas and lighting set up you can try adding an object into your scene. You can either directly create a mesh object inside the canvas, you can create a mesh object and pass properties into it as props or you can create a React component that you can re-use and import it into your canvas. If you wantr to create a rectangular cuboid you can use BoxGeometry. You can oneagain manually create the BoxGeometry object, but as we are using react you can simple put `<boxGeometry args={[2, 2, 2]} />` inside your mesh object. Here’s the component I made:
 
 ```
- `export default function Box(props) {
+ export default function Box(props) {
   return (
     <mesh {...props} recieveShadow={true} castShadow>
       <boxGeometry />
       <meshPhysicalMaterial color={"white"} />
     </mesh>
   );
-}`
+}
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
