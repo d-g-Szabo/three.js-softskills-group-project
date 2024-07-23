@@ -15,7 +15,7 @@ export default function Mars(props) {
   return (
     <mesh ref={marsRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[0.532, 30, 10]} />
-      <meshPhysicalMaterial color={"red"} />
+      <meshPhysicalMaterial color={"red"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );

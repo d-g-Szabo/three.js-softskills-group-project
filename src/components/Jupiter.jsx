@@ -18,7 +18,7 @@ export default function Jupiter(props) {
     <mesh ref={jupiterRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[5, 30, 10]} />
       {/* <sphereGeometry args={[11.21, 30, 10]} /> */}
-      <meshPhysicalMaterial color={"red"} />
+      <meshPhysicalMaterial color={"red"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );

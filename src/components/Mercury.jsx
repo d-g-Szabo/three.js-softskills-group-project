@@ -17,7 +17,7 @@ export default function Mercury(props) {
   return (
     <mesh ref={mercuryRef} recieveShadow={true} castShadow>
       <sphereGeometry args={[0.38, 30, 10]} />
-      <meshPhysicalMaterial color={"blue"} />
+      <meshPhysicalMaterial color={"blue"} ior={1} />
       <meshStandardMaterial map={props.map} />
     </mesh>
   );
