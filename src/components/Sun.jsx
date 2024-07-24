@@ -10,7 +10,7 @@ export default function Sun(props) {
   });
   return (
     <mesh {...props} ref={sunRef}>
-      <pointLight castShadow power={10000} />
+      <pointLight castShadow decay={1.3} power={700} />
       <sphereGeometry />
 
       <meshStandardMaterial
