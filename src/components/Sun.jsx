@@ -38,7 +38,8 @@ export default function Sun(props) {
 
   return (
     <mesh {...props} ref={sunRef}>
-      <pointLight power={10000} ref={lightRef}></pointLight>
+      <pointLight castShadow power={700} decay={1.3} ref={lightRef}></pointLight>
+
 
       <sphereGeometry />
 

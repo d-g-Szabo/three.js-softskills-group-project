@@ -1,7 +1,7 @@
 "use client";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { useTexture } from "@react-three/drei";
+import { Html, useTexture } from "@react-three/drei";
 import { TextureLoader } from "three";
 
 export default function Earth(props) {
@@ -17,6 +17,9 @@ export default function Earth(props) {
       <sphereGeometry />
       <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
+      <Html occlude position={[0, 2, 0]}>
+        Earth
+      </Html>
     </mesh>
   );
 }
