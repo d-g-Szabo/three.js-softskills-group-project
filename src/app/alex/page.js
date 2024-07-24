@@ -2,7 +2,7 @@
 import css from "@/styles/alexHome.module.css";
 import { Canvas } from "@react-three/fiber";
 import OrbitControls from "@/components/OrbitControls";
-import Draggable from "@/components/Draggable";
+// import Draggable from "@/components/Draggable";
 import Sun from "@/components/Sun";
 import Earth from "@/components/Earth";
 import { Suspense } from "react";
@@ -21,6 +21,7 @@ import { extend, createRoot, events } from "@react-three/fiber";
 import { Environment, useEnvironment } from "@react-three/drei";
 import Scene from "@/components/Scene";
 import LightBulb from "@/components/LightBulb";
+// import Flares from "@/components/Flares";
 
 export default function Home() {
   const earthTexture = useLoader(TextureLoader, "/2k_earth_daymap.jpg");
@@ -45,20 +46,20 @@ export default function Home() {
         }}
       >
         <Scene />
-        <Draggable>
-          <Suspense fallback={null}>
-            {/* <LightBulb /> */}
-            <Mercury map={mercuryTexture} />
-            <Venus map={venusTexture} />
-            <Earth map={earthTexture} />
-            <Mars map={marsTexture} />
-            <Jupiter map={jupiterTexture} />
-            <Saturn map={saturnTexture} />
-            <Uranus map={uranusTexture} />
-            <Neptune map={neptuneTexture} />
-            <Sun map={sunTexture} />
-          </Suspense>
-        </Draggable>
+        {/* <Draggable> */}
+        <Suspense fallback={null}>
+          {/* <LightBulb /> */}
+          <Mercury map={mercuryTexture} />
+          <Venus map={venusTexture} />
+          <Earth map={earthTexture} />
+          <Mars map={marsTexture} />
+          <Jupiter map={jupiterTexture} />
+          <Saturn map={saturnTexture} />
+          <Uranus map={uranusTexture} />
+          <Neptune map={neptuneTexture} />
+          <Sun map={sunTexture} />
+        </Suspense>
+        {/* </Draggable> */}
         <ambientLight color={"white"} intensity={0.3} />
         <OrbitControls />
       </Canvas>
