@@ -127,6 +127,18 @@ light.intensity = 0.1
 }
 `}</pre>
       </code>
+      <br />
+      <div className="flex">
+        <a href="https://threejs.org/docs/">Three.js docs</a>
+        <br />
+        <a href="https://docs.pmnd.rs/react-three-fiber/getting-started/introduction">
+          React Three Fiber docs
+        </a>
+        <br />
+        <a href="https://github.com/Adlam4002">Alex&apos;s GitHub</a>
+        <br />
+        <a href="https://github.com/d-g-Szabo">Daniel&apos;s GitHub</a>
+      </div>
     </main>
   );
 }
