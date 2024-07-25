@@ -1,7 +1,7 @@
 "use client";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { useTexture } from "@react-three/drei";
+import { useTexture, Html } from "@react-three/drei";
 import { TextureLoader } from "three";
 
 export default function Uranus(props) {
@@ -18,6 +18,9 @@ export default function Uranus(props) {
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
       <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
+      <Html occlude position={[0, 3, 0]}>
+        Uranus
+      </Html>
     </mesh>
   );
 }

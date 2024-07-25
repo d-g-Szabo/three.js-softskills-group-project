@@ -1,7 +1,7 @@
 "use client";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { useTexture } from "@react-three/drei";
+import { useTexture, Html } from "@react-three/drei";
 import { TextureLoader } from "three";
 
 export default function Mars(props) {
@@ -17,6 +17,9 @@ export default function Mars(props) {
       <sphereGeometry args={[0.532, 30, 10]} />
       <meshPhysicalMaterial color={"red"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
+      <Html occlude position={[0, 1, 0]}>
+        Mars
+      </Html>
     </mesh>
   );
 }

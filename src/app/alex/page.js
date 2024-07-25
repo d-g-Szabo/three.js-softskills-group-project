@@ -21,6 +21,7 @@ import { extend, createRoot, events } from "@react-three/fiber";
 import { Environment, useEnvironment } from "@react-three/drei";
 import Scene from "@/components/Scene";
 import LightBulb from "@/components/LightBulb";
+
 // import Flares from "@/components/Flares";
 
 export default function Home() {
@@ -61,7 +62,6 @@ export default function Home() {
         </Suspense>
         {/* </Draggable> */}
         <ambientLight color={"white"} intensity={0.15} />
-
       </Canvas>
     </div>
   );
