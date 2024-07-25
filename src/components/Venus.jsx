@@ -12,9 +12,9 @@ export default function Venus(props) {
 
   useFrame(({ clock }) => {
     venusRef.current.position.x =
-      Math.sin(clock.getElapsedTime() / 0.615) * (scaleFactor * 0.72);
+      Math.sin(clock.getElapsedTime() / 0.715) * (scaleFactor * 1.22);
     venusRef.current.position.z =
-      Math.cos(clock.getElapsedTime() / 0.615) * (scaleFactor * 0.72);
+      Math.cos(clock.getElapsedTime() / 0.715) * (scaleFactor * 1.22);
     venusRef.current.rotation.y += 0.01;
   });
 

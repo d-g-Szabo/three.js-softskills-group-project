@@ -20,11 +20,11 @@ export default function Saturn(props) {
 
   return (
     <mesh ref={saturnRef} recieveShadow={true} castShadow receiveShadow>
-      <sphereGeometry args={[6, 30, 10]} />
+      <sphereGeometry args={[14, 30, 10]} />
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
       <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
-      <Html occlude position={[0, 7, 0]}>
+      <Html occlude position={[0, 15, 0]}>
         Saturn
       </Html>
     </mesh>

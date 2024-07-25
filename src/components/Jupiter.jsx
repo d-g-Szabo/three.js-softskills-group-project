@@ -20,11 +20,11 @@ export default function Jupiter(props) {
 
   return (
     <mesh ref={jupiterRef} recieveShadow={true} castShadow receiveShadow>
-      <sphereGeometry args={[7, 30, 10]} />
+      <sphereGeometry args={[15, 30, 10]} />
       {/* <sphereGeometry args={[11.21, 30, 10]} /> */}
       <meshPhysicalMaterial color={"red"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
-      <Html occlude position={[0, 8, 0]}>
+      <Html occlude position={[0, 16, 0]}>
         Jupiter
       </Html>
     </mesh>
