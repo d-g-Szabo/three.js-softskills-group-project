@@ -64,7 +64,7 @@ export default function Home() {
           <Sun map={sunTexture} />
         </Suspense>
         {/* </Draggable> */}
-        <ambientLight color={"white"} intensity={0.15} />
+        <ambientLight color={"white"} intensity={0.5} />
       </Canvas>
     </div>
   );
