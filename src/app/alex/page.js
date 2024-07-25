@@ -21,7 +21,7 @@ import { extend, createRoot, events } from "@react-three/fiber";
 import { Environment, useEnvironment } from "@react-three/drei";
 import Scene from "@/components/Scene";
 import LightBulb from "@/components/LightBulb";
-
+import Link from "next/link";
 // import Flares from "@/components/Flares";
 
 export default function Home() {
@@ -39,6 +39,9 @@ export default function Home() {
 
   return (
     <div className={css.scene}>
+      <Link href={"/"} className="fixed z-10 bg-opacity-0 m-5">
+        Home
+      </Link>
       <Canvas
         shadows
         className={css.canvas}
