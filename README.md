@@ -20,7 +20,7 @@ Once the package is installed to start using it you will need to perform a littl
 
 - Mesh: this represents the polygon mesh that objects are created from.
 
-- Geometry: this is a representation of mesh, line, or point geometry. This inclused vertex positions, face indices, normal, colours, and custom attributes. There are pre-made geometries such as BoxGeometry, SphereGeometry, etc.
+- Geometry: this is a representation of mesh, line, or point geometry. This includes vertex positions, face indices, normal, colours, and custom attributes. There are pre-made geometries such as BoxGeometry, SphereGeometry, etc.
 
 - Material: describe the appearance of objects. This allows you to change the opacity, shadowSide, visibility, etc.
 

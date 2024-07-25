@@ -53,7 +53,7 @@ export default function Home() {
         <br />
         <li>
           Geometry: this is a representation of mesh, line, or point geometry.
-          This inclused vertex positions, face indices, normal, colours, and
+          This includes vertex positions, face indices, normal, colours, and
           custom attributes. There are pre-made geometries such as BoxGeometry,
           SphereGeometry, etc.
         </li>
