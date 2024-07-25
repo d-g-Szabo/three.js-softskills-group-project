@@ -1,7 +1,7 @@
 "use client";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { useTexture } from "@react-three/drei";
+import { useTexture, Html } from "@react-three/drei";
 import { TextureLoader } from "three";
 
 export default function Mercury(props) {
@@ -19,6 +19,9 @@ export default function Mercury(props) {
       <sphereGeometry args={[0.38, 30, 10]} />
       <meshPhysicalMaterial color={"blue"} ior={1} />
       <meshStandardMaterial map={props.map} />
+      <Html occlude position={[0, 1, 0]}>
+        Mercury
+      </Html>
     </mesh>
   );
 }
