@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic"; // Import dynamic
-// Step 2: Use dynamic imports with { ssr: false }
 const OrbitControls = dynamic(() => import("@/components/OrbitControls"), {
   ssr: false,
 });
@@ -28,10 +27,10 @@ import { Suspense } from "react";
 import { useState, useEffect } from "react";
 import { TextureLoader } from "three";
 // import { useLoader } from "@react-three/fiber";
-const useLoader = dynamic(
-  () => import("@react-three/fiber").then((mod) => mod.useLoader),
-  { ssr: false }
-);
+// const useLoader = dynamic(
+//   () => import("@react-three/fiber").then((mod) => mod.useLoader),
+//   { ssr: false }
+// );
 // import Mercury from "@/components/Mercury";
 // import Venus from "@/components/Venus";
 // import Mars from "@/components/Mars";
@@ -50,58 +49,60 @@ import Link from "next/link";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const [textures, setTextures] = useState(null);
 
   useEffect(() => {
     // This code runs after component mount, which happens only in the client
     setIsClient(true);
-  }, []);
+    if (isClient) {
+      // Load textures directly using TextureLoader not useLoader
+      const loader = new TextureLoader();
+      const textures = {
+        EarthTexture: loader.load("/2k_earth_daymap.jpg"),
+        MercuryTexture: loader.load("/2k_mercury.jpg"),
+        SunTexture: loader.load("/2k_sun.jpg"),
+        VenusTexture: loader.load("/2k_venus_atmosphere.jpg"),
+        MarsTexture: loader.load("/2k_mars.jpg"),
+        JupiterTexture: loader.load("/2k_jupiter.jpg"),
+        SaturnTexture: loader.load("/2k_saturn.jpg"),
+        UranusTexture: loader.load("/2k_uranus.jpg"),
+        NeptuneTexture: loader.load("/2k_neptune.jpg"),
+      };
+      setTextures(textures);
+    }
+  }, [isClient]);
 
-  const earthTexture = useLoader(TextureLoader, "/2k_earth_daymap.jpg");
-  const mercuryTexture = useLoader(TextureLoader, "/2k_mercury.jpg");
-  const sunTexture = useLoader(TextureLoader, "/2k_sun.jpg");
-  const venusTexture = useLoader(TextureLoader, "/2k_venus_atmosphere.jpg");
-  const marsTexture = useLoader(TextureLoader, "/2k_mars.jpg");
-  const jupiterTexture = useLoader(TextureLoader, "/2k_jupiter.jpg");
-  const saturnTexture = useLoader(TextureLoader, "/2k_saturn.jpg");
-  const uranusTexture = useLoader(TextureLoader, "/2k_uranus.jpg");
-  const neptuneTexture = useLoader(TextureLoader, "/2k_neptune.jpg");
-
-  // const starsTexture = useLoader(TextureLoader, "/stars.jpg");
+  if (!isClient || !textures) {
+    return null; // Render nothing until textures are loaded
+  }
 
   return (
-    <>
-      {isClient && (
-        <div className={css.scene}>
-          <Link href={"/"} className="fixed z-10 bg-opacity-0 m-5">
-            Home
-          </Link>
+    <div className={css.scene}>
+      <Link href={"/"} className="fixed z-10 bg-opacity-0 m-5">
+        Home
+      </Link>
 
-          <Canvas
-            shadows
-            className={css.canvas}
-            camera={{
-              position: [-6, 7, 7],
-            }}
-          >
-            <Scene />
-            {/* <Draggable> */}
-            <Suspense fallback={null}>
-              {/* <LightBulb /> */}
-              <Mercury map={mercuryTexture} />
-              <Venus map={venusTexture} />
-              <Earth map={earthTexture} />
-              <Mars map={marsTexture} />
-              <Jupiter map={jupiterTexture} />
-              <Saturn map={saturnTexture} />
-              <Uranus map={uranusTexture} />
-              <Neptune map={neptuneTexture} />
-              <Sun map={sunTexture} />
-            </Suspense>
-            {/* </Draggable> */}
-            <ambientLight color={"white"} intensity={0.5} />
-          </Canvas>
-        </div>
-      )}
-    </>
+      <Canvas
+        shadows
+        className={css.canvas}
+        camera={{
+          position: [-6, 7, 7],
+        }}
+      >
+        <Scene />
+        <Suspense fallback={<span>Loading textures...</span>}>
+          <Mercury map={textures.MercuryTexture} />
+          <Venus map={textures.VenusTexture} />
+          <Earth map={textures.EarthTexture} />
+          <Mars map={textures.MarsTexture} />
+          <Jupiter map={textures.JupiterTexture} />
+          <Saturn map={textures.SaturnTexture} />
+          <Uranus map={textures.UranusTexture} />
+          <Neptune map={textures.NeptuneTexture} />
+          <Sun map={textures.SunTexture} />
+        </Suspense>
+        <ambientLight color={"white"} intensity={0.5} />
+      </Canvas>
+    </div>
   );
 }
