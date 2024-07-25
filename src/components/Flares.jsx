@@ -1,3 +1,4 @@
+"use client";
 import { extend, useLoader } from "@react-three/fiber";
 import {
   Lensflare,
