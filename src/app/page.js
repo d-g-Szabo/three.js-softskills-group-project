@@ -8,7 +8,7 @@ export default function Home() {
       <br />
       <h2>By Alex Adlam & Daniel Szabo</h2>
       <br />
-      <Link href={"/alex"}>Click here to view our demo!</Link>
+      <Link href={"/solar-system"}>Click here to view our demo!</Link>
       <br />
       <p>
         In this project we have used Three.js with Next.js. This means that we
