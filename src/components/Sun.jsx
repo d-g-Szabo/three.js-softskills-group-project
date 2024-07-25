@@ -2,13 +2,19 @@
 import { useFrame, useLoader, extend } from "@react-three/fiber";
 import { useRef } from "react";
 import { useTexture } from "@react-three/drei";
-import { TextureLoader } from "three";
+import {
+  TextureLoader,
+  DirectionalLightHelper,
+  PointLightHelper,
+  Object3D,
+} from "three";
 import {
   Lensflare,
   LensflareElement,
 } from "three/examples/jsm/objects/Lensflare";
 import { useEffect } from "react";
 extend({ Lensflare, LensflareElement });
+
 export default function Sun(props) {
   const sunRef = useRef();
   const lightRef = useRef();
@@ -38,17 +44,19 @@ export default function Sun(props) {
 
   return (
     <mesh {...props} ref={sunRef}>
-      <pointLight castShadow power={700} decay={1.3} ref={lightRef}></pointLight>
+      <pointLight
+        castShadow
+        power={10000}
+        decay={1.3}
+        ref={lightRef}
+      ></pointLight>
 
-
-      <sphereGeometry />
-
+      <sphereGeometry args={[5, 32, 32]} />
       <meshStandardMaterial
         map={props.map}
         emissive={"red"}
-        emissiveIntensity={2}
+        emissiveIntensity={1.3}
       ></meshStandardMaterial>
-
       {/* <meshPhysicalMaterial color={"yellow"} /> */}
     </mesh>
   );

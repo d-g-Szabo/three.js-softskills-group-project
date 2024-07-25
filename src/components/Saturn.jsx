@@ -6,19 +6,25 @@ import { TextureLoader } from "three";
 
 export default function Saturn(props) {
   const saturnRef = useRef();
+
+  // Scale factor
+  const scaleFactor = 38; // 1 AU (Astronomical Units) is 20
+
   useFrame(({ clock }) => {
-    saturnRef.current.position.x = Math.sin(clock.getElapsedTime() / 29.4) * 30;
-    saturnRef.current.position.z = Math.cos(clock.getElapsedTime() / 29.4) * 30;
+    saturnRef.current.position.x =
+      Math.sin(clock.getElapsedTime() / 29.4) * (scaleFactor * 9.58);
+    saturnRef.current.position.z =
+      Math.cos(clock.getElapsedTime() / 29.4) * (scaleFactor * 9.58);
     saturnRef.current.rotation.y += 0.01;
   });
 
   return (
-    <mesh ref={saturnRef} recieveShadow={true} castShadow>
-      <sphereGeometry args={[4, 30, 10]} />
+    <mesh ref={saturnRef} recieveShadow={true} castShadow receiveShadow>
+      <sphereGeometry args={[6, 30, 10]} />
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
       <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
-      <Html occlude position={[0, 5, 0]}>
+      <Html occlude position={[0, 7, 0]}>
         Saturn
       </Html>
     </mesh>
