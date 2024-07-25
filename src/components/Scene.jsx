@@ -1,3 +1,4 @@
+"use client";
 import { Environment, useEnvironment } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
 
