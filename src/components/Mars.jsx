@@ -12,9 +12,9 @@ export default function Mars(props) {
 
   useFrame(({ clock }) => {
     marsRef.current.position.x =
-      Math.sin(clock.getElapsedTime() / 1.88) * (scaleFactor * 1.52);
+      Math.sin(clock.getElapsedTime() / 1.88) * (scaleFactor * 2.02);
     marsRef.current.position.z =
-      Math.cos(clock.getElapsedTime() / 1.88) * (scaleFactor * 1.52);
+      Math.cos(clock.getElapsedTime() / 1.88) * (scaleFactor * 2.02);
     marsRef.current.rotation.y += 0.01;
   });
 

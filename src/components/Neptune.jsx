@@ -12,19 +12,19 @@ export default function Uranus(props) {
 
   useFrame(({ clock }) => {
     uranusRef.current.position.x =
-      Math.sin(clock.getElapsedTime() / 163.7) * (scaleFactor * 30.07);
+      Math.sin(clock.getElapsedTime() / 163.7) * (scaleFactor * 19.07);
     uranusRef.current.position.z =
-      Math.cos(clock.getElapsedTime() / 163.7) * (scaleFactor * 30.07);
+      Math.cos(clock.getElapsedTime() / 163.7) * (scaleFactor * 19.07);
     uranusRef.current.rotation.y += 0.01;
   });
 
   return (
     <mesh ref={uranusRef} recieveShadow={true} castShadow receiveShadow>
-      <sphereGeometry args={[3, 30, 10]} />
+      <sphereGeometry args={[10, 30, 10]} />
       {/* <sphereGeometry args={[4.01, 30, 10]} /> */}
       <meshPhysicalMaterial color={"blue"} ior={2.3} />
       <meshStandardMaterial map={props.map} />
-      <Html occlude position={[0, 4, 0]}>
+      <Html occlude position={[0, 11, 0]}>
         Neptune
       </Html>
     </mesh>

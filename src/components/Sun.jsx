@@ -49,9 +49,10 @@ export default function Sun(props) {
         power={10000}
         decay={1.3}
         ref={lightRef}
+        distance={500}
       ></pointLight>
 
-      <sphereGeometry args={[5, 32, 32]} />
+      <sphereGeometry args={[4, 32, 32]} />
       <meshStandardMaterial
         map={props.map}
         emissive={"red"}

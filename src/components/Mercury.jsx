@@ -12,9 +12,9 @@ export default function Mercury(props) {
 
   useFrame(({ clock }) => {
     mercuryRef.current.position.x =
-      Math.sin(clock.getElapsedTime() / 0.241) * (scaleFactor * 0.39);
+      Math.sin(clock.getElapsedTime() / 0.641) * (scaleFactor * 0.89);
     mercuryRef.current.position.z =
-      Math.cos(clock.getElapsedTime() / 0.241) * (scaleFactor * 0.39);
+      Math.cos(clock.getElapsedTime() / 0.641) * (scaleFactor * 0.89);
     mercuryRef.current.rotation.y += 0.01;
   });
 

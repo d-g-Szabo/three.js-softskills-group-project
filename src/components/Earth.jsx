@@ -12,9 +12,9 @@ export default function Earth(props) {
 
   useFrame(({ clock }) => {
     earthRef.current.position.x =
-      Math.sin(clock.getElapsedTime() / 10) * (scaleFactor * 1);
+      Math.sin(clock.getElapsedTime() / 2) * (scaleFactor * 1.5);
     earthRef.current.position.z =
-      Math.cos(clock.getElapsedTime() / 10) * (scaleFactor * 1);
+      Math.cos(clock.getElapsedTime() / 2) * (scaleFactor * 1.5);
     earthRef.current.rotation.y += 0.01;
   });
 
