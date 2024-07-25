@@ -5,8 +5,8 @@ import {
   LensflareElement,
 } from "three/examples/jsm/objects/Lensflare.js";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-import lensflare0 from "../assets/lensflare0.png";
-import lensflare3 from "../assets/lensflare3.png";
+import lensflare0 from "/textures/lensflare0.png";
+import lensflare3 from "/textures/lensflare3.png";
 
 extend({ Lensflare, LensflareElement });
 
