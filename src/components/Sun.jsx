@@ -46,8 +46,8 @@ export default function Sun(props) {
     <mesh {...props} ref={sunRef}>
       <pointLight
         castShadow
-        power={10000}
-        decay={1.3}
+        power={5000}
+        decay={1.2}
         ref={lightRef}
         distance={500}
       ></pointLight>
