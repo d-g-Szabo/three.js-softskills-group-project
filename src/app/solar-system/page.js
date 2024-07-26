@@ -86,7 +86,7 @@ export default function Home() {
           <Neptune map={textures.NeptuneTexture} />
           <Sun map={textures.SunTexture} />
         </Suspense>
-        <ambientLight color={"white"} intensity={0.5} />
+        <ambientLight color={"white"} intensity={0.1} />
       </Canvas>
     </div>
   );
