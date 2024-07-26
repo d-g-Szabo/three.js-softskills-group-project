@@ -67,8 +67,8 @@ export default function Home() {
       <p>
         When you understand these concepts, you are ready to create your first
         scene. You will need to create a Canvas. This can be imported,{" "}
-        {`import{" "}
-        {Canvas} from &apos;@react-three/fiber&apos;`}
+        {`import
+        {Canvas} from '@react-three/fiber'`}
         , at the top of your page.js. The Canvas component does much of the set
         up for us, so we do not need to manually set up a Scene and Camera. It
         also renders our scene every frame so we do not need a render loop. A
